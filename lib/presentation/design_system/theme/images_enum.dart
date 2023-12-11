@@ -1,5 +1,6 @@
-class TracImages {
-  TracImages._();
+class TractImages {
+  TractImages._();
+
   static const String asset = "assets/images/asset.png";
   static const String component = "assets/images/component.png";
   static const String critic = "assets/images/critic.png";

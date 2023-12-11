@@ -6,6 +6,7 @@ import 'package:fabric_assets_tree_structure/data/services/get_units_service.dar
 import 'package:fabric_assets_tree_structure/domain/assets/models/asset_model.dart';
 import 'package:fabric_assets_tree_structure/domain/locations/models/location_model.dart';
 import 'package:fabric_assets_tree_structure/domain/units/models/unit_model.dart';
+import 'package:fabric_assets_tree_structure/domain/units/models/unit_with_children_model.dart';
 
 class UnitRepository {
   final GetUnitsService _getUnitsService;
@@ -26,7 +27,7 @@ class UnitRepository {
         .toList(growable: false);
   }
 
-  Future<UnitModel> getUnitAssets({required UnitModel unit}) async {
+  Future<UnitWithChildrenModel> getUnitAssets({required UnitModel unit}) async {
     final unitAllData = await Future.wait([
       _getLocationsService.readJson(
           jsonLocation: '${unit.directoryLocation}/locations.json'),
@@ -60,7 +61,7 @@ class UnitRepository {
       );
     }
 
-    return UnitModel.fromChildren(
+    return UnitWithChildrenModel.fromChildren(
       unit,
       locationsChildren: allLocationModels
           .where((location) => location.parentId == null)

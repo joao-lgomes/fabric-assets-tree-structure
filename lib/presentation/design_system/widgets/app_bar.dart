@@ -27,7 +27,7 @@ class TractAppBar extends AppBar {
 class TitleWidgetAppbar extends StatelessWidget {
   final Widget? titleWidget;
 
-  const TitleWidgetAppbar(this.titleWidget, {Key? key}) : super(key: key);
+  const TitleWidgetAppbar(this.titleWidget, {super.key});
 
   @override
   Widget build(BuildContext context) {

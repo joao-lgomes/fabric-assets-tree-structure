@@ -27,12 +27,11 @@ class TractButton extends StatelessWidget {
       this.iconRight,
       this.isEnable = true,
       this.size = ButtonSize.normal,
-      Key? key,
+      super.key,
       this.color = TractColors.primary,
       this.disabledColor = TractColors.g200,
       this.type = ButtonType.elevated,
-      this.typographyStyle})
-      : super(key: key);
+      this.typographyStyle});
 
   @override
   Widget build(BuildContext context) {

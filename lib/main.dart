@@ -4,6 +4,7 @@ import 'package:fabric_assets_tree_structure/data/services/get_units_service.dar
 import 'package:fabric_assets_tree_structure/domain/units/repository/unit_repository.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/theme.dart';
 import 'package:fabric_assets_tree_structure/presentation/features/home_screen/home_screen.dart';
+import 'package:fabric_assets_tree_structure/presentation/features/unit_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +36,11 @@ class App extends StatelessWidget {
                       Provider.of<GetAssetsService>(context, listen: false),
                   getUnitsService:
                       Provider.of<GetUnitsService>(context, listen: false),
+                )),
+        ChangeNotifierProvider(
+            create: (context) => UnitViewModel(
+                  repository:
+                      Provider.of<UnitRepository>(context, listen: false),
                 )),
       ],
       child: GestureDetector(

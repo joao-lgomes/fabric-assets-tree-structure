@@ -2,15 +2,9 @@
 
 A project that shows the structure of a factory with its components, assets, sub-assets, locations and sub-locations, in a tree structure.
 
-## Getting Started
+## Technical Data:
+Mobile application made in flutter, using Clean Architecture and MVVM, using state management, dependency injection and singletons using the provider package.
+Furthermore, inheritance, interfaces, factories and SOLID were used.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project architecture diagram made in Clean Architecture
+![project-architecture](https://github.com/joao-lgomes/fabric-assets-tree-structure/assets/54179958/21f4066c-a445-4e3a-92df-99e7b56d54fe)

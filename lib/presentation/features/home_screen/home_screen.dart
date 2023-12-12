@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<UnitViewModel>(context, listen: false).clearFilters();
     return Scaffold(
       appBar: TractAppBar(
         titleWidget: TractImage.asset(TractImages.logo, height: 17),

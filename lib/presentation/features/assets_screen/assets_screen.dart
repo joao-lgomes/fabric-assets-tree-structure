@@ -5,6 +5,7 @@ import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tr
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_typography.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/widgets/app_bar.dart';
 import 'package:fabric_assets_tree_structure/presentation/features/assets_screen/assets_screen_content.dart';
+import 'package:fabric_assets_tree_structure/presentation/features/unit_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -37,6 +38,7 @@ class AssetsScreen extends StatelessWidget {
                     TypoMed.subheading_2.copyWith(color: TractColors.secondary),
               );
             }
+            Provider.of<UnitViewModel>(context, listen: false).clearFilters();
             return AssetsScreenContent(unit: snapshot.data!);
           }),
     );

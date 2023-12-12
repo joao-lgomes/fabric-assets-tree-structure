@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Apex Unit",
+    "directoryLocation": "assets/data/apex_unit"
+  },
+  {
+    "name": "Jaguar Unit",
+    "directoryLocation": "assets/data/jaguar_unit"
+  },
+  {
+    "name": "Tobias Unit",
+    "directoryLocation": "assets/data/tobias_unit"
+  }
+]

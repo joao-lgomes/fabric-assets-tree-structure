@@ -7,13 +7,10 @@ import 'package:flutter/material.dart';
 class HomeScreenContent extends StatelessWidget {
   final List<UnitModel> units;
   final void Function(UnitModel unit) onUnitSelected;
-  final void Function() onClickNewUnit;
 
-  const HomeScreenContent(
-      {super.key,
-      required this.units,
-      required this.onUnitSelected,
-      required this.onClickNewUnit});
+  const HomeScreenContent({super.key,
+    required this.units,
+    required this.onUnitSelected});
 
   @override
   Widget build(BuildContext context) {

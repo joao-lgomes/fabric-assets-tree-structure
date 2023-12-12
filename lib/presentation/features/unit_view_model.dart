@@ -50,6 +50,9 @@ class UnitViewModel extends ChangeNotifier {
   }
 
   bool verifyAssetIsInFilter(AssetModel asset) {
+    if (searchList.isEmpty && filtersStatus.isEmpty && filtersType.isEmpty) {
+      return true;
+    }
     bool assetIsInSearch = false;
     for (var search in searchList) {
       if (asset.name.toLowerCase().contains(search.toLowerCase())) {
@@ -76,6 +79,9 @@ class UnitViewModel extends ChangeNotifier {
   }
 
   bool verifyLocationtIsInFilter(LocationModel location) {
+    if (searchList.isEmpty && filtersStatus.isEmpty && filtersType.isEmpty) {
+      return true;
+    }
     bool assetIsInSearch = false;
     for (var search in searchList) {
       if (location.name.toLowerCase().contains(search.toLowerCase())) {

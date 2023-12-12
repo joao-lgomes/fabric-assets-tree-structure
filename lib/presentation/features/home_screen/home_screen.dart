@@ -35,8 +35,7 @@ class HomeScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => AssetsScreen(unit: unit)));
-                },
-                onClickNewUnit: () {});
+                });
           }),
     );
   }

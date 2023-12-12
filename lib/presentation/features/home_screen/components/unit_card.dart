@@ -16,6 +16,7 @@ class UnitCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: GestureDetector(
+        key: Key(unit.name),
         onTap: () => onUnitSelected(unit),
         child: Container(
           decoration: BoxDecoration(

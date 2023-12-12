@@ -1,4 +1,4 @@
-import 'package:fabric_assets_tree_structure/domain/components/interfaces/sensor_type_enum_interface.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/interfaces/sensor_type_enum_interface.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +7,8 @@ enum SensorTypeEnum implements ISensorTypeEnum {
       TractColors.energy),
   vibration('vibration', 'Sensor de vibração', Icons.vibration,
       Color(0xff1b69c4), TractColors.primary),
+  smartTrac('smartTrac', 'Sensor smartTrac', Icons.monitor_heart_rounded,
+      Color(0xffda9100), Color(0xffda9100)),
   notFound(
       '', 'Not Found', Icons.error, TractColors.danger, TractColors.danger);
 

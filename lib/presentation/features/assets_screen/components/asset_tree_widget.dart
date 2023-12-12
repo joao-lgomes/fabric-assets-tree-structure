@@ -1,5 +1,5 @@
+import 'package:fabric_assets_tree_structure/domain/assets/enums/component_status_enum.dart';
 import 'package:fabric_assets_tree_structure/domain/assets/models/asset_model.dart';
-import 'package:fabric_assets_tree_structure/domain/components/enums/component_status_enum.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/images_enum.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_colors.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_typography.dart';
@@ -84,6 +84,7 @@ class _AssetTreeWidgetState extends State<AssetTreeWidget> {
                         children: widget.asset.assetChildren
                             .map((asset) => AssetTreeWidget(
                                   asset: asset,
+                                  initializeExpanded: widget.initializeExpanded,
                                 ))
                             .toList(growable: false)),
                   ),

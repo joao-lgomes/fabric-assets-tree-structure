@@ -9,4 +9,6 @@ abstract class IUnitWithChildrenModel {
   List<ILocationModel> get locationsChildren;
 
   List<IAssetModel> get assetsChildren;
+
+  int get numberOfAssetsAndLocations;
 }

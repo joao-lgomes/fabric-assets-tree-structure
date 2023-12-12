@@ -1,4 +1,4 @@
-import 'package:fabric_assets_tree_structure/domain/components/interfaces/component_status_enum_interface.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/interfaces/component_status_enum_interface.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_colors.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-import 'package:fabric_assets_tree_structure/domain/components/models/component_data_model.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/models/component_data_model.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_colors.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_typography.dart';
 import 'package:flutter/material.dart';

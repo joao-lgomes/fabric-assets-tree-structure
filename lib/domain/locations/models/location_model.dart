@@ -34,4 +34,12 @@ class LocationModel implements ILocationModel {
       assetsChildren: assetsChildren,
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'parentId': parentId,
+    };
+  }
 }

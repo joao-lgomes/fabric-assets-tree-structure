@@ -1,7 +1,7 @@
+import 'package:fabric_assets_tree_structure/domain/assets/enums/component_status_enum.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/enums/sensor_type_enum.dart';
 import 'package:fabric_assets_tree_structure/domain/assets/models/asset_model.dart';
-import 'package:fabric_assets_tree_structure/domain/components/enums/component_status_enum.dart';
-import 'package:fabric_assets_tree_structure/domain/components/enums/sensor_type_enum.dart';
-import 'package:fabric_assets_tree_structure/domain/components/models/component_data_model.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/models/component_data_model.dart';
 import 'package:fabric_assets_tree_structure/domain/locations/models/location_model.dart';
 import 'package:fabric_assets_tree_structure/domain/units/models/unit_model.dart';
 import 'package:fabric_assets_tree_structure/domain/units/models/unit_with_children_model.dart';
@@ -59,7 +59,7 @@ class UnitViewModel extends ChangeNotifier {
     }
     if (asset.isComponent) {
       return (filtersStatus.contains(asset.status!.text) ||
-          filtersStatus.isEmpty) &&
+              filtersStatus.isEmpty) &&
           (filtersType.contains(asset.sensorType!.text) ||
               filtersType.isEmpty) &&
           (searchList.isEmpty || assetIsInSearch);
@@ -115,7 +115,7 @@ class UnitViewModel extends ChangeNotifier {
   void clickFilter(ComponentDataModel filter) {
     if (filter.isType) {
       final int indexFind =
-      filtersType.indexWhere((element) => element == filter.text);
+          filtersType.indexWhere((element) => element == filter.text);
       if (indexFind == -1) {
         filtersType.add(filter.text);
       } else {
@@ -124,7 +124,7 @@ class UnitViewModel extends ChangeNotifier {
       notifyListeners();
     } else {
       final int indexFind =
-      filtersStatus.indexWhere((element) => element == filter.text);
+          filtersStatus.indexWhere((element) => element == filter.text);
       if (indexFind == -1) {
         filtersStatus.add(filter.text);
       } else {
@@ -142,5 +142,11 @@ class UnitViewModel extends ChangeNotifier {
   void removeSearch(String search) {
     searchList.remove(search);
     notifyListeners();
+  }
+
+  void clearFilters() {
+    searchList.clear();
+    filtersStatus.clear();
+    filtersType.clear();
   }
 }

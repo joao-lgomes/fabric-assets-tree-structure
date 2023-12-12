@@ -34,7 +34,6 @@ class UnitRepository {
       _getAssetsService.readJson(
           jsonLocation: '${unit.directoryLocation}/assets.json'),
     ]);
-
     final List<AssetModel> allAssetModels =
         (unitAllData[1] as List<AssetEntity>)
             .map((assetEntity) =>
@@ -69,6 +68,7 @@ class UnitRepository {
       assetsChildren: allAssetModels
           .where((asset) => asset.parentId == null && asset.locationId == null)
           .toList(growable: false),
+      numberOfAssetsAndLocations: unitAllData[0].length + unitAllData[1].length,
     );
   }
 }

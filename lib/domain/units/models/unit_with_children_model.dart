@@ -9,23 +9,27 @@ class UnitWithChildrenModel extends UnitModel
   final List<LocationModel> locationsChildren;
   @override
   final List<AssetModel> assetsChildren;
+  @override
+  final int numberOfAssetsAndLocations;
 
-  const UnitWithChildrenModel(
-      {required super.name,
-      required super.directoryLocation,
-      required this.assetsChildren,
-      required this.locationsChildren});
 
-  factory UnitWithChildrenModel.fromChildren(
-    UnitModel model, {
+  const UnitWithChildrenModel({required super.name,
+    required super.directoryLocation,
+    required this.assetsChildren,
+    required this.locationsChildren,
+    required this.numberOfAssetsAndLocations});
+
+  factory UnitWithChildrenModel.fromChildren(UnitModel model, {
     required List<LocationModel> locationsChildren,
     required List<AssetModel> assetsChildren,
+    required int numberOfAssetsAndLocations,
   }) {
     return UnitWithChildrenModel(
       name: model.name,
       directoryLocation: model.directoryLocation,
       locationsChildren: locationsChildren,
       assetsChildren: assetsChildren,
+      numberOfAssetsAndLocations: numberOfAssetsAndLocations,
     );
   }
 }

@@ -77,10 +77,12 @@ class _LocationTreeWidgetState extends State<LocationTreeWidget> {
                         for (var location in widget.location.locationsChildren)
                           LocationTreeWidget(
                             location: location,
+                            initializeExpanded: widget.initializeExpanded,
                           ),
                         for (var asset in widget.location.assetsChildren)
                           AssetTreeWidget(
                             asset: asset,
+                            initializeExpanded: widget.initializeExpanded,
                           )
                       ],
                     ),

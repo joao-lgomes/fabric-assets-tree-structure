@@ -1,4 +1,4 @@
-import 'package:fabric_assets_tree_structure/domain/components/interfaces/component_data_interface.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/interfaces/component_data_interface.dart';
 import 'package:flutter/material.dart';
 
 abstract class IComponentStatusEnum implements IComponentDataInterface {

@@ -2,6 +2,7 @@ import 'package:fabric_assets_tree_structure/domain/units/models/unit_model.dart
 import 'package:fabric_assets_tree_structure/domain/units/models/unit_with_children_model.dart';
 import 'package:fabric_assets_tree_structure/domain/units/repository/unit_repository.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_colors.dart';
+import 'package:fabric_assets_tree_structure/presentation/design_system/theme/tract_typography.dart';
 import 'package:fabric_assets_tree_structure/presentation/design_system/widgets/app_bar.dart';
 import 'package:fabric_assets_tree_structure/presentation/features/assets_screen/assets_screen_content.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +26,16 @@ class AssetsScreen extends StatelessWidget {
               .getUnitAssets(unit: unit),
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return const SizedBox.shrink();
+              return const Center(
+                child: CircularProgressIndicator(color: TractColors.primary),
+              );
             }
             if (snapshot.hasError) {
-              return const SizedBox.shrink();
+              return Text(
+                "Ocorreu um erro, tente novamente mais tarde.",
+                style:
+                    TypoMed.subheading_2.copyWith(color: TractColors.secondary),
+              );
             }
             return AssetsScreenContent(unit: snapshot.data!);
           }),

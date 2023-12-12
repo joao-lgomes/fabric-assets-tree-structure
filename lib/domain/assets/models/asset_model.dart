@@ -1,7 +1,7 @@
 import 'package:fabric_assets_tree_structure/data/entities/asset_entity.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/enums/component_status_enum.dart';
+import 'package:fabric_assets_tree_structure/domain/assets/enums/sensor_type_enum.dart';
 import 'package:fabric_assets_tree_structure/domain/assets/interfaces/asset_model_interface.dart';
-import 'package:fabric_assets_tree_structure/domain/components/enums/component_status_enum.dart';
-import 'package:fabric_assets_tree_structure/domain/components/enums/sensor_type_enum.dart';
 
 class AssetModel implements IAssetModel {
   @override
@@ -42,7 +42,6 @@ class AssetModel implements IAssetModel {
       parentId: entity.parentId,
       locationId: entity.locationId,
       assetChildren: assetChildren,
-      // componentChildren: componentChildren,
       sensorType: entity.sensorType != null
           ? SensorTypeEnum.fromType(entity.sensorType)
           : null,
@@ -51,5 +50,16 @@ class AssetModel implements IAssetModel {
           : null,
       isComponent: entity.sensorType != null && entity.status != null,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'parentId': parentId,
+      'locationId': locationId,
+      'sensorType': sensorType?.text,
+      'status': status?.text,
+    };
   }
 }

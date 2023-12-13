@@ -36,7 +36,9 @@ main() {
       expect(testUnits[2].name, 'Tobias Unit');
     });
 
-    test("[NPS_VIEW_MODEL] [Check skipNps NPS] [should be true]", () async {
+    test(
+        "[UNIT_VIEW_MODEL] [Check function getUnitAssets] [should represents the info of the unit with this asset children]",
+        () async {
       final viewModel = setupViewModel();
 
       final UnitWithChildrenModel testUnit = await viewModel.getUnitAssets(
